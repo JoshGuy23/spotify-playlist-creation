@@ -1,5 +1,9 @@
 import requests
+import os
 from bs4 import BeautifulSoup
+
+CLIENT_ID = os.environ["CLIENT_ID"]
+CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 
 date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: \n")
 

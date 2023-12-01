@@ -43,7 +43,7 @@ oauth = SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_
 try:
     with open(".cache") as file:
         user_token = eval(file.readline())["access_token"]
-except spotipy.SpotifyException:
+except spotipy.SpotifyException or FileNotFoundError:
     oauth.get_cached_token()
     with open(".cache") as file:
         user_token = eval(file.readline())["access_token"]
